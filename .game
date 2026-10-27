@@ -1,0 +1,26 @@
+# vim: set filetype=game:
+# game: this repository
+
+# this is holemath.
+name holemath
+
+# i am named
+exclude README.md
+
+# tests
+run tests .    :: env GOWORK=off go test  ./...
+# bench
+run bench .    :: env GOWORK=off go test -run '^$' -bench . ./...
+# mutants
+run mutants .  :: env GOWORK=off go test -run TestMutants -mutants -timeout 3h
+
+# lint rules for this repository, from game 30dcdf8. any lint line here
+# replaces all the lint rules in your game config, so these copy them all.
+lint width 80
+lint rows 25
+lint comments
+lint print
+lint exclaim
+lint shout
+lint words hyperscaler enterprise-grade blazing-fast load-bearing
+lint paragraph 4
